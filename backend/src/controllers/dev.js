@@ -22,16 +22,18 @@ module.exports = {
 
       const techsArray = techs.split(",").map(tech => tech.trim());
 
+      const location = {
+        type: "Point",
+        coordinates: [longitude, latitude]
+      };
+
       dev = await Dev.create({
         github_username,
         name,
         avatar_url,
         bio,
         techs: techsArray,
-        location: {
-          type: "Point",
-          coordinates: [longitude, latitude]
-        }
+        location
       });
     }
 

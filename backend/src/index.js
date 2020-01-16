@@ -1,14 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes.js");
-
-mongoose.connect(
-  "mongodb+srv://<user>:<password>@cluster0-efoe3.mongodb.net/test?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  }
-);
+require("dotenv").config();
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true
+});
 
 const app = express();
 
