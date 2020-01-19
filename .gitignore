@@ -3,3 +3,6 @@ node_modules
 package-lock.json
 backend/package-lock.json
 web/node_modules
+.gitignore
+.env
+backend/.env
